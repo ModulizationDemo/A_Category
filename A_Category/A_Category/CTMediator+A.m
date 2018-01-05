@@ -15,7 +15,9 @@
     /*
         AViewController *viewController = [[AViewController alloc] init];
      */
-    return [self performTarget:@"A" action:@"viewController" params:nil shouldCacheTarget:NO];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    params[@"callback"] = callback;
+    return [self performTarget:@"A" action:@"viewController" params:params shouldCacheTarget:NO];
 }
 
 @end

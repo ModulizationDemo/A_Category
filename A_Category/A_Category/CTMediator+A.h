@@ -11,6 +11,6 @@
 
 @interface CTMediator (A)
 
-- (UIViewController *)A_aViewController;
+- (UIViewController *)A_aViewControllerWithCallback:(void(^)(NSString *result))callback;
 
 @end
