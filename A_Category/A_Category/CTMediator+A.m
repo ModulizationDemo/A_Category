@@ -17,6 +17,7 @@
      */
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     params[@"callback"] = callback;
+    params[kCTMediatorParamsKeySwiftTargetModuleName] = @"A_swift";
     return [self performTarget:@"A" action:@"viewController" params:params shouldCacheTarget:NO];
 }
 
