@@ -10,15 +10,19 @@
 
 @implementation CTMediator (A)
 
-- (UIViewController *)A_aViewControllerWithCallback:(void(^)(NSString *result))callback;
+- (UIViewController *)A_Category_Swift_ViewControllerWithCallback:(void (^)(NSString *))callback
 {
-    /*
-        AViewController *viewController = [[AViewController alloc] init];
-     */
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     params[@"callback"] = callback;
     params[kCTMediatorParamsKeySwiftTargetModuleName] = @"A_swift";
-    return [self performTarget:@"A" action:@"viewController" params:params shouldCacheTarget:NO];
+    return [self performTarget:@"A" action:@"Category_ViewController" params:params shouldCacheTarget:NO];
+}
+
+- (UIViewController *)A_Category_Objc_ViewControllerWithCallback:(void (^)(NSString *))callback
+{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    params[@"callback"] = callback;
+    return [self performTarget:@"A" action:@"Category_ViewController" params:params shouldCacheTarget:NO];
 }
 
 @end
